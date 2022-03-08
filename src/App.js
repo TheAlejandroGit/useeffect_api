@@ -14,11 +14,11 @@ const success=pos=>{
 const latitude= pos.coords.latitude;
 const longitude=pos.coords.longitude;
   
-axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=24707f74ce4469cea3264d85915485e1`)
+axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=24707f74ce4469cea3264d85915485e1`)
 
 .then(res=> {
   setWeather(res.data)
-  setTemperature(res.data.main.temp)
+  setTemperature(res.data.main.temp);
 
 
 
