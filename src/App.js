@@ -6,7 +6,7 @@ function App() {
 
 const [weather, setWeather]=useState({});
 const [temperature,setTemperature]=useState(0);
-const [isFh, setIsFh]= useState(true);
+const [isFh, setIsFh]= useState(false);
 
 
 const success=pos=>{
@@ -14,7 +14,7 @@ const success=pos=>{
 const latitude= pos.coords.latitude;
 const longitude=pos.coords.longitude;
   
-axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=24707f74ce4469cea3264d85915485e1`)
+axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=24707f74ce4469cea3264d85915485e1`)
 
 .then(res=> {
   setWeather(res.data)
